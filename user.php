@@ -1,16 +1,23 @@
 <?php
    session_start(); // On démarre la session en premier
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="style.css" />
+        <meta charset="utf-8" />
         <title>User2/8</title>
     </head>
     <body>
-        <p>
-        <?= 'Je suis toujours' . ' ' . $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] . ' ' . $_SESSION['age'] ?>
-        </p>
+        <a href="index.php">home</a>
+        <a href="exo2.php">exo2</a>
+        <?php if (!empty($_SESSION['lastname'])) { ?>
+            <p><?= $_SESSION['lastname']; ?></p>
+        <?php } ?>
+        <?php if (!empty($_SESSION['firstname'])) { ?>
+            <p><?= $_SESSION['firstname']; ?></p>
+        <?php } ?>
+        <?php if (!empty($_SESSION['age'])) { ?>
+            <p><?= $_SESSION['age']; ?></p>
+        <?php } ?>
     </body>
 </html>
-
